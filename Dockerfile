@@ -9,4 +9,4 @@ WORKDIR /app
 
 COPY --from=build /app/target/demo-1.jar app.jar
 EXPOSE 4040
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
