@@ -4,9 +4,7 @@ import com.springrender.demo.Models.BasicRecord;
 import com.springrender.demo.Models.Usuario;
 import com.springrender.demo.Repos.UsuarioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -27,5 +25,9 @@ public class BasicController {
     @GetMapping("/2")
     public Iterable<Usuario> getUsuarios(){
         return usuarioRepo.findAll();
+    }
+    @PostMapping
+    public void postUser(@RequestBody Usuario usuario) {
+        usuarioRepo.save(usuario);
     }
 }
