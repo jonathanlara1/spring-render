@@ -1,17 +1,33 @@
 package com.springrender.demo.Controllers;
 
 import com.springrender.demo.Models.BasicRecord;
+import com.springrender.demo.Models.Usuario;
+import com.springrender.demo.Repos.UsuarioRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Iterator;
+import java.util.List;
 
 @RestController
 @RequestMapping("/basic")
 public class BasicController {
 
+    UsuarioRepo usuarioRepo;
+    @Autowired
+    public void setUsuarioRepo(UsuarioRepo usuarioRepo) {
+        this.usuarioRepo = usuarioRepo;
+    }
 
     @GetMapping
     public BasicRecord basic() {
         return new BasicRecord(1,"Un mensaje" , "de mangano");
+    }
+
+    @GetMapping("/2")
+    public Iterable<Usuario> getUsuarios(){
+        return usuarioRepo.findAll(); 
     }
 }
