@@ -1,3 +1,5 @@
+com\springrender\demo\Repos\UsuarioRepo.class
 com\springrender\demo\Controllers\BasicController.class
 com\springrender\demo\DemoApplication.class
 com\springrender\demo\Models\BasicRecord.class
+com\springrender\demo\Models\Usuario.class
