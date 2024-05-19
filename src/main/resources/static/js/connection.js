@@ -1,7 +1,7 @@
 
 
 const sendUser = async (jsonBody)=>{
-    const postUser = await fetch("/basic",{
+    const postUser = await fetch("/users",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
